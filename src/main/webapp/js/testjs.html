@@ -1,0 +1,26 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script>
+$(function() {
+	var deathStarTarget = {
+		planet: "Alderaan",
+		onClickSuperLaser: function() {
+			this.destroy( this.planet );
+		},
+		destroy: function() {
+			// DESTROY IT
+		}
+	};
+
+	//$( "#button" ).on( "click", deathStarTarget.onClickSuperLaser.apply(deathStarTarget,arguments) );
+	//$( "#button" ).on( "click", function(event){deathStarTarget.onClickSuperLaser.call(deathStarTarget,event)} );
+	$( "#button" ).on( "click", deathStarTarget.onClickSuperLaser.bind( deathStarTarget ) );
+
+});
+</script>
+</head>
+<body>
+<button id="button">destroy</button>
+</body>
+</html>

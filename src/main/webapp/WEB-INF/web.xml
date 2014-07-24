@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error404.html</location>
+	</error-page>
+	
+	<servlet>
+		<servlet-name>api</servlet-name>
+		<servlet-class>com.nokia.granite.analyzer.ServiceAPI</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>api</servlet-name>
+		<url-pattern>/api</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>stat</servlet-name>
+		<servlet-class>com.nokia.test.statistic.StatisticAPI</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>stat</servlet-name>
+		<url-pattern>/stat</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>split</servlet-name>
+		<servlet-class>com.nokia.test.statistic.SplitAPI</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>split</servlet-name>
+		<url-pattern>/split</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>fileupload</servlet-name>
+		<servlet-class>com.nokia.test.casedesign.FileuploadAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>fileupload</servlet-name>
+		<url-pattern>/fileupload</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>downloadAttach</servlet-name>
+		<servlet-class>com.nokia.test.casedesign.DownloadAttachment</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>downloadAttach</servlet-name>
+		<url-pattern>/downloadAttach</url-pattern>
+	</servlet-mapping>
+	
+	<session-config>
+		<session-timeout>600</session-timeout>
+	</session-config>
+</web-app>
